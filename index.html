@@ -134,6 +134,9 @@
       padding: 100px 80px 80px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      gap: 48px;
     }
 
     #about::before {
@@ -155,9 +158,21 @@
     }
 
     .hero-inner {
-      max-width: 680px;
+      flex: 1;
+      max-width: 640px;
       position: relative;
       z-index: 1;
+    }
+
+    .hero-photo {
+      width: 160px;
+      height: 200px;
+      object-fit: cover;
+      object-position: 20% top;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      display: block;
     }
 
     .hero-tags {
@@ -535,7 +550,7 @@
 <main class="main">
 
   <section id="about">
-    <img src="npmphoto.jpg" alt="Nicole P. Marwell" class="hero-photo" style="position:absolute; top:80px; right:80px; width:160px; height:200px; object-fit:cover; object-position:left top; z-index:2; display:block;" />
+    <img src="npmphoto.jpg" alt="Nicole P. Marwell" class="hero-photo" />
     <div class="hero-inner">
       <div class="hero-tags">
         <span class="hero-tag">Sociology</span>

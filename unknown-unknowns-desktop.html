@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unknown Unknowns in Claude Code (Desktop App) | Nicole P. Marwell</title>
+  <meta name="description" content="Post 0 of a series for non-coders: why the privacy risks of an AI assistant stay invisible, the false choice between abstaining and using it blindly, and the six risks the series takes up. Desktop app version." />
+  <link rel="canonical" href="https://nicolemarwell.github.io/ai-privacy/unknown-unknowns-desktop.html" />
+  <meta property="og:title" content="Unknown Unknowns in Claude Code: How Non-Coders Can Protect Themselves" />
+  <meta property="og:description" content="Using AI tools with greater awareness of how to preserve your privacy and security" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicolemarwell.github.io/ai-privacy/unknown-unknowns-desktop.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html" aria-label="Nicole P. Marwell — home">
+        <span class="brand-mark">NM</span>
+        <span class="brand-name">Nicole&nbsp;P.&nbsp;Marwell</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../research.html">Research</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../teaching.html">Teaching</a>
+        <a href="../media.html">Media</a>
+        <a href="../ai-privacy.html" class="active">AI &amp; Privacy</a>
+        <a href="../about.html">About</a>
+        <a class="btn btn-primary" href="../cv.pdf">CV <span class="arrow">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head"><div class="wrap paper-wrap">
+      <div class="paper-breadcrumb"><a href="../ai-privacy.html">&larr; AI &amp; Privacy series</a></div>
+      <div class="paper-head">
+        <span class="eyebrow">Post 0 &middot; Desktop app version</span>
+        <h1>Unknown Unknowns in Claude Code: How Non-Coders Can Protect Themselves</h1>
+      </div>
+    </div></section>
+
+    <section class="section" style="padding-top:0;"><div class="wrap paper-wrap">
+      <p class="post-dek">Using AI tools with greater awareness of how to preserve your privacy and security</p>
+      <p class="post-note"><em>A note on this version: I first used Claude Code on the command line, in the Terminal app; this version of the post is written for the Claude Code desktop app—the ordinary application window you download and run instead. The ideas are identical, and a companion version is written for Terminal. My computer is a Mac, and throughout this series the folder names and the exact wording you will see on screen describe macOS. The ideas apply just as well on Windows; the specifics — where things live, and what the messages say — differ.</em></p>
+      <p class="post-crosslink">Using the Terminal instead? <a href="unknown-unknowns-terminal.html">Read the Terminal (CLI) version &rarr;</a></p>
+
+      <div class="post-body">
+<p>You are probably familiar with the term “unknown unknowns”—it is one category of a familiar epistemological taxonomy whose usage stretches from 19<sup>th</sup> century British references to a vaguely identified Persian proverb, to mid-twentieth century engineering, to former U.S. Secretary of Defense Donald Rumsfeld’s commentaries on intelligence gathering. A “known known” is settled. A “known unknown” is a gap you perceive, and therefore can act on: by asking, waiting, or investigating. But it is the unknown unknowns that do the damage—because they never announce themselves.</p>
+<p>I’m a sociologist and a Professor at the Crown Family School of Social Work, Policy, and Practice at the University of Chicago. My research is primarily ethnographic: sustained participant-observation fieldwork and long interviews, aimed at learning how people in some particular world understand that world. Yet I have sometimes been motivated to answer sociological questions for which these methods are poorly suited. Rather than set these questions aside, I have collaborated with colleagues who are experts in other methods: regression analysis, multilevel modeling, network analysis, machine learning. When artificial intelligence tools like Claude Code became available, I wondered if they could help me pursue research using methods outside my personal toolbox. So I started to experiment.</p>
+<p>Over the last three months, I’ve built some projects with Claude Code, talked about Claude Code with colleagues with substantial computing expertise, and conversed with Claude Code itself about what I’ve been doing. In doing all this, I have become aware of an entire set of risks to my privacy and security that, just a few weeks ago, were unknown unknowns for me. I thought it might be useful to share these observations, as well as some suggestions for addressing them. So I’m writing a series of posts that explains each one in plain language. It’s a work in progress.</p>
+<h2>Why do non-coders face so many unknown unknowns in Claude Code?</h2>
+<p>Perhaps surprisingly, the answer to this question came from a conversation I had with Claude Code itself. And it seemed obvious, once I learned it. As with every AI assistant, Claude Code is explicitly designed <em>to reduce friction for the user.</em> In other words, the whole point is to make things easier for you, the user, and to get you to a finished product faster. Some of the friction being removed is wonderful: I used Claude Code to build me a professional website in an afternoon, a task which would have taken me many months if I’d had to learn HTML and whatever other coding is going on behind the scenes. But some of the friction once did protective work: someone writing their own code is at least in a position to recognize when a command exposes information they’d prefer was kept private, and they can pause and make sure they decide to keep it that way. When that pause is engineered away to create a frictionless, goal-attainment machine, such exposures become invisible. The <em>convenient</em> path and the <em>cautious</em> path look identical to a non-coder Claude Code user, and a system optimized to be helpful has no particular reason to volunteer the difference.</p>
+<p>The desktop app is that same principle—reduce friction—applied to the way you reach the tool at all. It removes the command line, which for someone like me is a genuine kindness. But it also offers conveniences the Terminal app never did: you can connect it to your email or your files with a few clicks, or let it act on your screen or inside a web browser. Each convenience removes a little more of the friction that once made a person stop and consider, and each is a new unknown unknown of exactly the kind this series is about. The friendlier the tool becomes, the more of its machinery it keeps out of view.</p>
+<h2>The two common responses to Claude Code’s unknown unknowns</h2>
+<p>For someone in my position—curious, capable, pressed for time, and with essentially zero coding knowledge— the “unknown unknowns” situation can look like a choice between two doors, neither of them good.</p>
+<p>Door Number One: abstain. You protect your privacy and security by declining to hand your work to a system you do not understand. This is the safe course, and not an unreasonable one. Its cost is everything the tools might have done for your research, your teaching, your institution—together with the possible experience of watching colleagues accelerate their work while you keep to your regular pace.</p>
+<p>Door Number Two: use the tools blindly. You adopt them, enjoy the speed, and decline to think too hard about the machinery underneath. This is, in my observation, what many people have in fact done. I did it myself, at the start. But this is exactly where unknown unknowns can wreak havoc on privacy and security. Because non-coders have little experience that might lead us to raise the relevant questions, we are flying blind. We do not know what we do not know.</p>
+<h2>Door Number Three: Learn the unknown unknowns and address them</h2>
+<p>I’m never going to be a coder. Just to give you a sense of my non-coder-ness, consider that three different computer science postdocs tried to teach me the basics of GitHub (a version control system used by computer scientists and many others), and I failed to learn it each time. But thanks to the encouragement of Kemal Badur, the University of Chicago’s Chief Technology Officer, I did learn how to open the Terminal app on my Mac and talk with Claude Code on the Command Line Interface (CLI). More recently, I have tried out the Claude Code desktop app, which is definitely less forbidding than Terminal.</p>
+<p>It’s been exciting to see what I can get out of my interactions with Claude Code, but my realizations about unknown unknowns had to be seeded by discussions with actual people. Through talking with BK Lee (a sociologist from New York University) and Nick Feamster (a computer scientist at the University of Chicago with whom I frequently collaborate), I’ve been able to understand certain things about how Claude Code operates. This led to a “eureka” moment about the existence of unknown unknowns for non-coders like me. With that insight, I asked Claude Code some questions, and it helped me come up with a taxonomy of what the big unknown unknowns about itself are. And so I asked it what I needed to do to protect myself from them.</p>
+<p>From what I can tell, there are about six key unknown unknowns that non-coders should understand and take precautions against before they start using Claude Code in earnest. Some of what you’ll need to do to protect your privacy and security while working with Claude Code is a one-time setup task. Some of it will take you an afternoon to figure out. Others require ongoing discipline, but your awareness of them means they are no longer unknown unknowns. None of it requires you to become someone you are not.</p>
+<h2>Six unknown unknowns in Claude Code</h2>
+<p>I’m hoping I can produce the details on each of these six things in a fairly compressed window of time. Yes, Claude Code will help me do it. Here’s a preview of what they are:</p>
+<ul>
+<li><p>What Claude Code, OpenAI’s Codex, or any other AI assistant can touch and do on your own computer, and how you can confine it</p></li>
+<li><p>What you owe the other people whose data you hold—students, patients, clients, research subjects—before you enter any of it into an AI assistant</p></li>
+<li><p>What data actually leaves your computer when an AI assistant reads or creates files, and how you can restrict it</p></li>
+<li><p>Where that data goes, and how you can decide whether it is used to train future AI models</p></li>
+<li><p>What is retained on your own computer once your AI assistant session ends</p></li>
+<li><p>Whether you can, in fact, tell what an AI assistant is doing—this is the hardest one, and cuts across all the others</p></li>
+</ul>
+<p>Each installment in the series will explain the issue (so the unknown unknown becomes known), then close with something you can do that same day to address it: a setting to change, a question to ask, an item for a checklist kept beside your keyboard.</p>
+<p>My aim is not to usher you through Door Number One. Abstaining is safe, but its cost—everything these tools might do for your research and your teaching—is higher than it needs to be. Nor is it to abandon you at Door Number Two, where the benefits are real but the unknown unknowns are left free to do their damage. My goal is to show that the choice between those two is a false one. The risks that make blind use dangerous are neither endless nor mysterious. Door Number Three is simply Door Number Two with the unknowns made known. You use these tools in the ways that advance your work, while knowing where the dangers lie and how to guard against them. For those of us who are not computing people, and have no plans to become so, that is the door I am trying to hold open.</p>
+      </div>
+
+      <div class="post-next">
+        <div class="rb-subhead">Next in the series</div>
+        <div class="pn-title"><a href="one-folder-every-time-desktop.html">Part 1 &mdash; One Folder, Every Time: Where You Start Decides What It Can Reach <span class="arrow">&rarr;</span></a></div>
+        <div class="pn-meta">Unknown unknown #1: First, Build a Fence &middot; desktop app version</div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Nicole P. Marwell</span>
+          <p>Professor, Crown Family School of Social Work, Policy, and Practice, University of Chicago.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="../research.html">Research</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../grants.html">Grants</a>
+          <a href="../teaching.html">Teaching</a>
+          <a href="../media.html">Media</a>
+          <a href="../ai-privacy.html">AI &amp; Privacy</a>
+          <a href="../about.html">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:nmarwell@uchicago.edu">nmarwell@uchicago.edu</a>
+          <a href="https://scholar.google.com/citations?user=d5DbR3IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3950121" target="_blank" rel="noopener">SSRN</a>
+          <a href="https://orcid.org/0000-0001-5748-3179" target="_blank" rel="noopener">ORCID</a>
+          <a href="../cv.pdf">Curriculum Vitae (PDF)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Nicole P. Marwell</span>
+        <span>University of Chicago &middot; Edith Abbott Hall, Chicago, IL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

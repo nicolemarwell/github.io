@@ -20,6 +20,16 @@ var PUBS = window.PUBS;
 
 var BASE = 'https://nicolemarwell.github.io';
 
+// Hand-written post pages in the AI & Privacy series. These are NOT generated —
+// they are only listed here so they get into sitemap.xml. Add a line when a post
+// goes live (see README, "Add a post to the AI & Privacy series").
+var SERIES_PAGES = [
+  'ai-privacy/unknown-unknowns-desktop.html',
+  'ai-privacy/unknown-unknowns-terminal.html',
+  'ai-privacy/one-folder-every-time-desktop.html',
+  'ai-privacy/one-folder-every-time-terminal.html'
+];
+
 var TYPE_LABELS = {
   book: 'Book', article: 'Article', chapter: 'Chapter',
   proceedings: 'Conference proceedings', essay: 'Essay / Report',
@@ -127,6 +137,7 @@ function nav(prefix) {
 '        <a href="' + prefix + 'grants.html">Grants</a>\n' +
 '        <a href="' + prefix + 'teaching.html">Teaching</a>\n' +
 '        <a href="' + prefix + 'media.html">Media</a>\n' +
+'        <a href="' + prefix + 'ai-privacy.html">AI &amp; Privacy</a>\n' +
 '        <a href="' + prefix + 'about.html">About</a>\n' +
 '        <a class="btn btn-primary" href="' + prefix + 'cv.pdf">CV <span class="arrow">↓</span></a>\n' +
 '      </nav>\n' +
@@ -138,7 +149,7 @@ function footer(prefix) {
 '  <footer class="footer"><div class="wrap">\n' +
 '    <div class="footer-top">\n' +
 '      <div class="footer-brand"><span class="brand-name">Nicole P. Marwell</span><p>Professor, Crown Family School of Social Work, Policy, and Practice, University of Chicago.</p></div>\n' +
-'      <div class="footer-col"><h4>Explore</h4><a href="' + prefix + 'research.html">Research</a><a href="' + prefix + 'publications.html">Publications</a><a href="' + prefix + 'grants.html">Grants</a><a href="' + prefix + 'teaching.html">Teaching</a><a href="' + prefix + 'media.html">Media</a><a href="' + prefix + 'about.html">About</a></div>\n' +
+'      <div class="footer-col"><h4>Explore</h4><a href="' + prefix + 'research.html">Research</a><a href="' + prefix + 'publications.html">Publications</a><a href="' + prefix + 'grants.html">Grants</a><a href="' + prefix + 'teaching.html">Teaching</a><a href="' + prefix + 'media.html">Media</a><a href="' + prefix + 'ai-privacy.html">AI &amp; Privacy</a><a href="' + prefix + 'about.html">About</a></div>\n' +
 '      <div class="footer-col"><h4>Connect</h4><a href="mailto:nmarwell@uchicago.edu">nmarwell@uchicago.edu</a><a href="https://scholar.google.com/citations?user=d5DbR3IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3950121" target="_blank" rel="noopener">SSRN</a><a href="https://orcid.org/0000-0001-5748-3179" target="_blank" rel="noopener">ORCID</a><a href="' + prefix + 'cv.pdf">Curriculum Vitae (PDF)</a></div>\n' +
 '    </div>\n' +
 '    <div class="footer-bottom"><span>© <span data-year>2026</span> Nicole P. Marwell</span><span>University of Chicago · Edith Abbott Hall, Chicago, IL</span></div>\n' +
@@ -223,7 +234,8 @@ html = html.replace(/<!--BUILD:PUBS:START-->[\s\S]*?<!--BUILD:PUBS:END-->/,
 fs.writeFileSync(pubFile, html);
 
 // 3) sitemap.xml + robots.txt
-var pages = ['', 'research.html', 'publications.html', 'grants.html', 'teaching.html', 'media.html', 'about.html']
+var pages = ['', 'research.html', 'publications.html', 'grants.html', 'teaching.html', 'media.html', 'ai-privacy.html', 'about.html']
+  .concat(SERIES_PAGES)
   .concat(pubsSorted.map(function (p) { return 'papers/' + p.id + '.html'; }));
 var sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   pages.map(function (u) { return '  <url><loc>' + BASE + '/' + u + '</loc></url>'; }).join('\n') + '\n</urlset>\n';

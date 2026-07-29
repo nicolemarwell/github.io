@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Folder, Every Time (Terminal) | Nicole P. Marwell</title>
+  <meta name="description" content="Unknown unknown #1, part 1 of 3: by default an AI assistant can reach everything on your computer that you can. Make one folder for your AI-assisted work and start there every time. Terminal (CLI) version." />
+  <link rel="canonical" href="https://nicolemarwell.github.io/ai-privacy/one-folder-every-time-terminal.html" />
+  <meta property="og:title" content="One Folder, Every Time: Where You Start Decides What It Can Reach" />
+  <meta property="og:description" content="Unknown unknown #1 — by default, an AI assistant can reach everything on your computer that you can. So the most important thing to do, before you start using it, is to fence it in." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicolemarwell.github.io/ai-privacy/one-folder-every-time-terminal.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html" aria-label="Nicole P. Marwell — home">
+        <span class="brand-mark">NM</span>
+        <span class="brand-name">Nicole&nbsp;P.&nbsp;Marwell</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../research.html">Research</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../teaching.html">Teaching</a>
+        <a href="../media.html">Media</a>
+        <a href="../ai-privacy.html" class="active">AI &amp; Privacy</a>
+        <a href="../about.html">About</a>
+        <a class="btn btn-primary" href="../cv.pdf">CV <span class="arrow">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head"><div class="wrap paper-wrap">
+      <div class="paper-breadcrumb"><a href="../ai-privacy.html">&larr; AI &amp; Privacy series</a></div>
+      <div class="paper-head">
+        <span class="eyebrow">Unknown unknown #1: First, Build a Fence &middot; Part 1 &middot; Terminal (CLI)</span>
+        <h1>One Folder, Every Time: Where You Start Decides What It Can Reach</h1>
+      </div>
+    </div></section>
+
+    <section class="section" style="padding-top:0;"><div class="wrap paper-wrap">
+      <p class="post-dek">Unknown unknown #1 — by default, an AI assistant can reach everything on your computer that you can. So the most important thing to do, before you start using it, is to fence it in.</p>
+      <p class="post-note"><em>A note on scope: My computer is a Mac. Throughout this series, the folder names, the terminal, and the exact wording you will see on screen describe macOS. The ideas apply just as well on Windows; the specifics — where things live, and what the messages say — differ.</em></p>
+      <p class="post-crosslink">Using the Claude desktop app instead? <a href="one-folder-every-time-desktop.html">Read the desktop app version &rarr;</a></p>
+
+      <div class="post-body">
+<p>When you sit down to use an AI assistant like Claude Code, the most consequential choice you’ll make is one that is probably an unknown unknown for you. It’s where on your computer you launch Claude Code from.</p>
+<p>To see why this choice matters, it helps to know how your computer is arranged — something most of us who are not computing people have never had reason to examine much. Before Claude Code, I used four or five folders on my computer. <strong>Documents</strong>, where all my real work goes; <strong>Applications</strong>, when I need an app that’s not in my dock; <strong>Downloads</strong>, where files land when I pull them from my email or a website; and the <strong>Desktop</strong>, where I put things I need to do something to RIGHT NOW. I also use my synced <strong>Box</strong> folder, to access shared folders in the cloud and to back up my work. But I never once thought about the larger architecture of my computer.</p>
+<p>Since starting to use Claude Code, though, I’ve learned about the important role played by my <strong>home folder.</strong> In the Mac Finder window, your home folder has a little house icon, and it’s usually named after you. It’s the top of your computer architecture, the umbrella under which everything else on your computer is nested: Documents, Downloads, Desktop, your photos and music, your cloud-synced Box and Dropbox, the hidden settings and keys your programs rely on, and more. If you’re like me, you probably never go to your home folder. And that is exactly the problem when you dive into using Claude Code: when you launch Claude Code without thinking about where you are launching it from, it defaults into your home folder. In other words, Claude Code enters your computer at the very top of its architecture, able to reach Documents, Downloads, the Desktop, your cloud folders, and everything underneath.</p>
+<p>So the most important thing you need to do before working with Claude Code is to change <em>where you run it from</em>: to fence it into one folder instead of giving it the run of your whole computer. When I started working on this series, I was running Claude Code from the Terminal app, also known as the Command Line Interface (CLI). A couple of weeks ago, the Claude Code desktop app became available to Enterprise users at my university, and that changes some of these instructions a bit. This post is for CLI users; I’ve got a separate post that covers the same material for desktop app users.</p>
+<h2>Step one: make one folder for your AI-assisted work, and always start Claude Code from there</h2>
+<p>Open Finder, click on your home folder, and make a new folder for your AI-assisted work. If you’re using Claude Code, you probably want to avoid naming the folder “Claude,” because other files that are part of Claude Code already use that name in some version. You can pick the name you want, but a good option could be <code>AIWorkspace</code>: it’s one word, no spaces (which keeps it simple to type), and self-explanatory. Once you’ve made the folder, you can even drag it into the “Favorites” section of your Finder sidebar, so it’s easy to access. The most important thing, though, is that <em>from now on, start Claude Code only from inside this folder.</em> If you’re using the Terminal app to work with Claude Code, how do you do this?</p>
+<p>To open the Terminal app, go to the “Applications” folder, find the “Utilities” sub-folder, and click on “Terminal.” A window will open up that looks like it’s for coding.</p>
+<p>Look at this window. The only thing in it will be a line that says <code>[yourname]@Mac ~ %</code></p>
+<p>Type the following command there, telling your computer to change the folder: <code>cd ~/AIWorkspace</code></p>
+<p>Now your Terminal window should have a line that says <code>[yourname]@Mac AIWorkspace %</code></p>
+<p>If this is what you’re reading, then you are now operating from inside the folder you’ve designated as the place you work with Claude Code (I’m assuming you’ve named that folder “AIWorkspace”). You can now launch Claude Code by typing <code>claude</code>.</p>
+<p>The first few times I did this I had to check on whether I was writing the command the right way. But it soon became an easy habit: open Terminal, <code>cd</code> into my AIWorkspace folder, run Claude Code. And if the only thing you ever do to protect your privacy and security is to confine Claude Code to a single folder, you’ve actually taken a strong protective step.</p>
+<p>However. If your computer or cloud folders hold sensitive material, you want to take two additional protective steps. As I’ll discuss in the next post, these steps create a boundary for Claude Code that does not depend on your memory (i.e., changing into your AIWorkspace folder before launching Claude Code) or on the tool’s good behavior. Read on to the next post to learn about these other two steps. And as a reminder: if you’re using Claude Code via the desktop app, you still need to protect yourself! Read the desktop app version of these posts to learn how to protect yourself there, too.</p>
+      </div>
+
+      <div class="post-next">
+        <div class="rb-subhead">Next in the series</div>
+        <div class="pn-title">Part 2 &mdash; Two Kinds of Fences You Need: A Sandbox for Commands, Permissions for What Files It Can Touch</div>
+        <div class="pn-meta">Coming soon &middot; Terminal (CLI) version</div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Nicole P. Marwell</span>
+          <p>Professor, Crown Family School of Social Work, Policy, and Practice, University of Chicago.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="../research.html">Research</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../grants.html">Grants</a>
+          <a href="../teaching.html">Teaching</a>
+          <a href="../media.html">Media</a>
+          <a href="../ai-privacy.html">AI &amp; Privacy</a>
+          <a href="../about.html">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:nmarwell@uchicago.edu">nmarwell@uchicago.edu</a>
+          <a href="https://scholar.google.com/citations?user=d5DbR3IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3950121" target="_blank" rel="noopener">SSRN</a>
+          <a href="https://orcid.org/0000-0001-5748-3179" target="_blank" rel="noopener">ORCID</a>
+          <a href="../cv.pdf">Curriculum Vitae (PDF)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Nicole P. Marwell</span>
+        <span>University of Chicago &middot; Edith Abbott Hall, Chicago, IL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

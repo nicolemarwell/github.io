@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI &amp; Privacy | Nicole P. Marwell</title>
+  <meta name="description" content="A series for non-coders on using AI coding assistants like Claude Code without compromising the privacy and security of the people whose data you hold." />
+  <meta property="og:title" content="AI &amp; Privacy: a series for non-coders | Nicole P. Marwell" />
+  <meta property="og:description" content="Six risks that non-coders using AI assistants rarely see coming — and what to do about each one." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nicolemarwell.github.io/ai-privacy.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Nicole P. Marwell — home">
+        <span class="brand-mark">NM</span>
+        <span class="brand-name">Nicole&nbsp;P.&nbsp;Marwell</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="research.html" data-page="research.html">Research</a>
+        <a href="publications.html" data-page="publications.html">Publications</a>
+        <a href="grants.html" data-page="grants.html">Grants</a>
+        <a href="teaching.html" data-page="teaching.html">Teaching</a>
+        <a href="media.html" data-page="media.html">Media</a>
+        <a href="ai-privacy.html" data-page="ai-privacy.html">AI &amp; Privacy</a>
+        <a href="about.html" data-page="about.html">About</a>
+        <a class="btn btn-primary" href="cv.pdf">CV <span class="arrow">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Writing &middot; in progress</span>
+        <h1>Unknown Unknowns in Claude Code</h1>
+        <p>A series for people who are not computing people. If you hold other people&rsquo;s data &mdash; students, patients, clients, research subjects &mdash; and you have started using an AI assistant that runs on your own computer, there are about six risks you probably cannot yet see. Each installment explains one in plain language and ends with something you can do that same day.</p>
+      </div>
+    </section>
+
+    <nav class="subnav" aria-label="Choose your version">
+      <div class="wrap">
+        <a href="#desktop">Desktop app version</a>
+        <a href="#terminal">Terminal (CLI) version</a>
+      </div>
+    </nav>
+
+    <section class="section" style="padding-top:0;">
+      <div class="wrap">
+
+        <!-- ── DESKTOP TRACK ─────────────────────────────── -->
+        <div class="research-block" id="desktop">
+          <div class="rb-banner reveal">
+            <div class="rb-banner-label">
+              <span class="eyebrow">Version one</span>
+              <h2>The desktop app</h2>
+            </div>
+          </div>
+          <p class="rb-lede">For readers who use Claude Code inside the Claude application window &mdash; the ordinary app you download and run. Start here if you have never opened a command line and have no intention of starting now.</p>
+
+          <div class="uu-group">
+            <span class="eyebrow">Start here</span>
+            <h3 class="uu-title">Post 0 &mdash; the case for the series</h3>
+            <p class="uu-note">Why these risks stay invisible to non-coders, and a preview of all six.</p>
+            <div class="selected-list reveal">
+              <a class="selected-item" href="ai-privacy/unknown-unknowns-desktop.html">
+                <div class="selected-year">0</div>
+                <div class="selected-main">
+                  <div class="s-title">Unknown Unknowns in Claude Code: How Non-Coders Can Protect Themselves</div>
+                  <div class="s-venue">The false choice between abstaining and using it blindly</div>
+                </div>
+                <div class="selected-meta"><span class="selected-arrow">&rarr;</span></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="uu-group">
+            <span class="eyebrow">Unknown unknown #1</span>
+            <h3 class="uu-title">First, Build a Fence</h3>
+            <p class="uu-note">How to confine the assistant before you ever use it &mdash; the first thing to get right.</p>
+            <div class="selected-list reveal">
+              <a class="selected-item" href="ai-privacy/one-folder-every-time-desktop.html">
+                <div class="selected-year">1</div>
+                <div class="selected-main">
+                  <div class="s-title">One Folder, Every Time: Where You Start Decides What It Can Reach</div>
+                  <div class="s-venue">Part 1 &middot; the folder dropdown is the most important privacy decision in the app</div>
+                </div>
+                <div class="selected-meta"><span class="selected-arrow">&rarr;</span></div>
+              </a>
+              <div class="selected-item is-upcoming">
+                <div class="selected-year">2</div>
+                <div class="selected-main">
+                  <div class="s-title">Two Kinds of Fences You Need: A Sandbox for Commands, Permissions for What Files It Can Touch</div>
+                  <div class="s-venue">Part 2 &middot; Coming soon</div>
+                </div>
+                <div class="selected-meta"><span class="selected-badge">Coming soon</span></div>
+              </div>
+          </div>
+
+        </div>
+
+        <!-- ── TERMINAL TRACK ────────────────────────────── -->
+        <div class="research-block" id="terminal" style="padding-top:64px;">
+          <div class="rb-banner reveal">
+            <div class="rb-banner-label">
+              <span class="eyebrow">Version two</span>
+              <h2>The Terminal (CLI)</h2>
+            </div>
+          </div>
+          <p class="rb-lede">The same series, for readers running Claude Code on the command line in the Terminal app. The ideas are identical; the folder names, the commands, and the wording on screen are not.</p>
+
+          <div class="uu-group">
+            <span class="eyebrow">Start here</span>
+            <h3 class="uu-title">Post 0 &mdash; the case for the series</h3>
+            <p class="uu-note">Why these risks stay invisible to non-coders, and a preview of all six.</p>
+            <div class="selected-list reveal">
+              <a class="selected-item" href="ai-privacy/unknown-unknowns-terminal.html">
+                <div class="selected-year">0</div>
+                <div class="selected-main">
+                  <div class="s-title">Unknown Unknowns in Claude Code: How Non-Coders Can Protect Themselves</div>
+                  <div class="s-venue">The false choice between abstaining and using it blindly</div>
+                </div>
+                <div class="selected-meta"><span class="selected-arrow">&rarr;</span></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="uu-group">
+            <span class="eyebrow">Unknown unknown #1</span>
+            <h3 class="uu-title">First, Build a Fence</h3>
+            <p class="uu-note">How to confine the assistant before you ever use it &mdash; the first thing to get right.</p>
+            <div class="selected-list reveal">
+              <a class="selected-item" href="ai-privacy/one-folder-every-time-terminal.html">
+                <div class="selected-year">1</div>
+                <div class="selected-main">
+                  <div class="s-title">One Folder, Every Time: Where You Start Decides What It Can Reach</div>
+                  <div class="s-venue">Part 1 &middot; where you launch it from decides what it can reach</div>
+                </div>
+                <div class="selected-meta"><span class="selected-arrow">&rarr;</span></div>
+              </a>
+              <div class="selected-item is-upcoming">
+                <div class="selected-year">2</div>
+                <div class="selected-main">
+                  <div class="s-title">Two Kinds of Fences You Need: A Sandbox for Commands, Permissions for What Files It Can Touch</div>
+                  <div class="s-venue">Part 2 &middot; Coming soon</div>
+                </div>
+                <div class="selected-meta"><span class="selected-badge">Coming soon</span></div>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div class="cta-text">
+            <span class="eyebrow">Start here</span>
+            <h2>Not sure which version you need?</h2>
+            <p>Post 0 makes the case and previews all six risks. It reads the same either way &mdash; pick the version that matches how you open Claude Code, and if you don&rsquo;t know, choose the desktop app.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="ai-privacy/unknown-unknowns-desktop.html">Post 0 &middot; Desktop app <span class="arrow">&rarr;</span></a>
+            <a class="btn btn-outline" href="ai-privacy/unknown-unknowns-terminal.html">Post 0 &middot; Terminal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Nicole P. Marwell</span>
+          <p>Professor, Crown Family School of Social Work, Policy, and Practice, University of Chicago. Studying urban governance, nonprofit organizations, internet innovation, and AI governance.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="grants.html">Grants</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="media.html">Media</a>
+          <a href="ai-privacy.html">AI &amp; Privacy</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:nmarwell@uchicago.edu">nmarwell@uchicago.edu</a>
+          <a href="https://scholar.google.com/citations?user=d5DbR3IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3950121" target="_blank" rel="noopener">SSRN</a>
+          <a href="https://orcid.org/0000-0001-5748-3179" target="_blank" rel="noopener">ORCID</a>
+          <a href="cv.pdf">Curriculum Vitae (PDF)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Nicole P. Marwell</span>
+        <span>University of Chicago &middot; Edith Abbott Hall, Chicago, IL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

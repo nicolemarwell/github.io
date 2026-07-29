@@ -88,6 +88,7 @@
     if (p.award) badges += '<span class="pub-badge award">' + esc(p.award) + '</span>';
 
     var actions = '';
+    if (p.pdf) actions += '<a class="pub-link" href="' + p.pdf + '">PDF <span aria-hidden="true">↓</span></a>';
     if (p.url) actions += '<a class="pub-link" href="' + p.url + '" target="_blank" rel="noopener">' + (p.urlLabel || 'Link') + ' <span aria-hidden="true">↗</span></a>';
     if (p.abstract) actions += '<button class="pub-abstract-toggle" type="button" aria-expanded="false">Abstract</button>';
     actions +=

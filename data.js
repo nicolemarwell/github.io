@@ -1,7 +1,10 @@
 /* ============================================================
    Nicole P. Marwell — publications data
    Fields: id, year, title, authors[], container, detail?, type,
-           themes[], url?, urlLabel?, award?, forthcoming?, abstract?
+           themes[], url?, urlLabel?, pdf?, award?, forthcoming?, abstract?
+   pdf: path from the site root to a self-hosted copy, e.g.
+        'papers/internet-futuring.pdf'. Renders a "PDF ↓" button and tells
+        Google Scholar where the full text is (citation_pdf_url).
    type: book | article | chapter | proceedings | essay | review | working
    themes: 'nonprofit' | 'internet'   (AI group has no publications yet)
    ============================================================ */
@@ -49,10 +52,13 @@ window.PUBS = [
     url: 'https://imc2026-cycle1.hotcrp.com/doc/imc2026-cycle1-final32.pdf', urlLabel: 'PDF'
   },
   {
-    id: 'internet-futuring', year: 2026, type: 'article', themes: ['internet'], forthcoming: true,
+    id: 'internet-futuring', year: 2026, type: 'article', themes: ['internet'],
     title: 'Internet Futuring: How Communities are Connecting Themselves',
     authors: ['Henna Zamurd Butt', 'Nicole P. Marwell', 'Nick Feamster'],
-    container: 'Digital Culture & Society', detail: 'Vol. 11(1)'
+    container: 'Digital Culture & Society', detail: 'Vol. 11(2), pp. 145–166',
+    url: 'https://doi.org/10.14361/dcs-2025-0207', urlLabel: 'DOI',
+    pdf: 'papers/internet-futuring.pdf',
+    abstract: 'In the United States, high-speed internet connectivity is ubiquitous in many places yet markedly absent in others. In the wake of the Covid-19 pandemic, renewed federal efforts toward universal broadband have mobilized billions of dollars aimed at closing infrastructural gaps. We bring together the cases of Detroit, Michigan and a Northern Michigan Tribe (NMT) — two communities where broadband has not yet fully arrived — to consider how ambitions for connectivity are articulated and realized in practice. Efforts to achieve more equitable distribution of the internet’s benefits cannot be meaningfully disengaged from questions of power and control over the internet as both a discursive and material architecture. Adopting a decolonizing stance, this paper situates the contemporary experiences of these two differently marginalized communities within longer histories of settler colonialism and dispossession. Internet futuring and internet management operate as a dialectical analytic, attuned to the ways that power arrangements are unsettled through practices of futuring and stabilized through managerial mechanisms. In Detroit, we trace the Hope Village plan for an open access, municipally owned fibre network, a highly anticipated project that stalled before it began. Further north, in Michigan’s Upper Peninsula, we follow NMT’s path to build a fibre network to serve Tribal members across the region, whilst navigating multiple setbacks and policy constraints. Across both sites, we observe internet management operating through mechanisms of hypervisibility, conditional recognition, and temporality that structure the field of possibility for connectivity. Internet futuring emerges as a localized, relational, and iterative practice of self-determination, producing distinct connectivity demands and outcomes.'
   },
   {
     id: 'beyond-data-points', year: 2025, type: 'proceedings', themes: ['internet'],

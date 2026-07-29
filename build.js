@@ -103,7 +103,8 @@ function citationMeta(p) {
   else m.push('<meta name="citation_technical_report_institution" content="' + escAttr(p.container) + '">');
   var doi = doiOf(p);
   if (doi) m.push('<meta name="citation_doi" content="' + escAttr(doi) + '">');
-  if (p.url && /\.pdf($|\?)/i.test(p.url)) m.push('<meta name="citation_pdf_url" content="' + escAttr(p.url) + '">');
+  if (p.pdf) m.push('<meta name="citation_pdf_url" content="' + BASE + '/' + escAttr(p.pdf) + '">');
+  else if (p.url && /\.pdf($|\?)/i.test(p.url)) m.push('<meta name="citation_pdf_url" content="' + escAttr(p.url) + '">');
   m.push('<meta name="citation_abstract_html_url" content="' + BASE + '/papers/' + p.id + '.html">');
   return m.join('\n  ');
 }
@@ -162,7 +163,9 @@ function paperPage(p) {
   var badges = '<span class="pub-badge type">' + TYPE_LABELS[p.type] + '</span>' +
     (p.forthcoming ? '<span class="pub-badge forth">Forthcoming</span>' : '') +
     (p.award ? '<span class="pub-badge award">' + esc(p.award) + '</span>' : '');
-  var linkBtn = p.url ? '<a class="btn btn-primary" href="' + escAttr(p.url) + '" target="_blank" rel="noopener">' + esc(p.urlLabel || 'View') + ' <span class="arrow">↗</span></a>' : '';
+  // A self-hosted PDF is the primary action; the publisher link steps down to outline.
+  var pdfBtn = p.pdf ? '<a class="btn btn-primary" href="../' + escAttr(p.pdf) + '">PDF <span class="arrow">↓</span></a>' : '';
+  var linkBtn = p.url ? '<a class="btn ' + (p.pdf ? 'btn-outline' : 'btn-primary') + '" href="' + escAttr(p.url) + '" target="_blank" rel="noopener">' + esc(p.urlLabel || 'View') + ' <span class="arrow">↗</span></a>' : '';
   return '<!DOCTYPE html>\n<html lang="en">\n<head>\n' +
 '  <meta charset="UTF-8" />\n  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n' +
 '  <title>' + esc(p.title) + ' | Nicole P. Marwell</title>\n' +
@@ -186,7 +189,7 @@ nav('../') +
 '      </div>\n' +
 '    </div></section>\n' +
 '    <section class="section" style="padding-top:0;"><div class="wrap paper-wrap">\n' +
-'      <div class="paper-links">' + linkBtn + '</div>\n' +
+'      <div class="paper-links">' + pdfBtn + linkBtn + '</div>\n' +
 (p.abstract ? '      <h2 class="paper-section-title">Abstract</h2>\n      <p class="paper-abstract">' + esc(p.abstract) + '</p>\n' : '') +
 '      <h2 class="paper-section-title">Cite</h2>\n' +
 '      <div class="cite-box"><span class="cite-text">' + esc(apaCite(p)) + '</span><br><button class="cite-btn copy-btn" type="button" data-copy="' + escAttr(apaCite(p)) + '">Copy reference</button></div>\n' +
@@ -204,6 +207,7 @@ footer('../') +
 /* ---- crawlable list item (static) ------------------------ */
 function listItem(p) {
   var actions = '';
+  if (p.pdf) actions += '<a class="pub-link" href="' + escAttr(p.pdf) + '">PDF ↓</a> ';
   if (p.url) actions += '<a class="pub-link" href="' + escAttr(p.url) + '" target="_blank" rel="noopener">' + esc(p.urlLabel || 'Link') + ' ↗</a> ';
   actions += '<a class="pub-link" href="papers/' + p.id + '.html">Details</a>';
   return '<article class="pub" data-type="' + p.type + '" data-themes="' + (p.themes || []).join(' ') + '" data-year="' + p.year + '">' +

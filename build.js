@@ -27,7 +27,9 @@ var SERIES_PAGES = [
   'ai-privacy/unknown-unknowns-desktop.html',
   'ai-privacy/unknown-unknowns-terminal.html',
   'ai-privacy/one-folder-every-time-desktop.html',
-  'ai-privacy/one-folder-every-time-terminal.html'
+  'ai-privacy/one-folder-every-time-terminal.html',
+  'ai-privacy/two-kinds-of-fences-desktop.html',
+  'ai-privacy/two-kinds-of-fences-terminal.html'
 ];
 
 var TYPE_LABELS = {

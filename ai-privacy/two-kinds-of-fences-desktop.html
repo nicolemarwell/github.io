@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two Kinds of Fences You Need (Desktop app) | Nicole P. Marwell</title>
+  <meta name="description" content="Unknown unknown #1, part 2 of 3: a folder you have to remember is a habit, not a wall. The two fences your computer can enforce for you — a sandbox around the commands Claude Code runs, and permission rules for the files it can open. Desktop app version." />
+  <link rel="canonical" href="https://nicolemarwell.github.io/ai-privacy/two-kinds-of-fences-desktop.html" />
+  <meta property="og:title" content="Two Kinds of Fences You Need: A Sandbox for Commands, Permissions for What Files Claude Code Can Touch" />
+  <meta property="og:description" content="Unknown unknown #1, continued — a folder you have to remember is a habit, not a wall. If your computer can access data other people are counting on you to protect, you want a fence the computer itself enforces. It turns out there are two of them." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicolemarwell.github.io/ai-privacy/two-kinds-of-fences-desktop.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html" aria-label="Nicole P. Marwell — home">
+        <span class="brand-mark">NM</span>
+        <span class="brand-name">Nicole&nbsp;P.&nbsp;Marwell</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../research.html">Research</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../teaching.html">Teaching</a>
+        <a href="../media.html">Media</a>
+        <a href="../ai-privacy.html" class="active">AI &amp; Privacy</a>
+        <a href="../about.html">About</a>
+        <a class="btn btn-primary" href="../cv.pdf">CV <span class="arrow">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head"><div class="wrap paper-wrap">
+      <div class="paper-breadcrumb"><a href="../ai-privacy.html">&larr; AI &amp; Privacy series</a></div>
+      <div class="paper-head">
+        <span class="eyebrow">Unknown unknown #1: First, Build a Fence &middot; Part 2 &middot; Desktop app</span>
+        <h1>Two Kinds of Fences You Need: A Sandbox for Commands, Permissions for What Files Claude Code Can Touch</h1>
+      </div>
+    </div></section>
+
+    <section class="section" style="padding-top:0;"><div class="wrap paper-wrap">
+      <p class="post-dek">Unknown unknown #1, continued — a folder you have to remember is a habit, not a wall. If your computer can access data other people are counting on you to protect, you want a fence the computer itself enforces. It turns out there are two of them.</p>
+      <p class="post-note"><em>A note on scope: like the rest of this series, this post describes a Mac and is written for the desktop app — the application window you download and run, rather than the command line in the Terminal. (A companion version is written for the Terminal.) The fences are the same in both, and are set in the same place. The ideas apply on Windows too, but the specifics differ.</em></p>
+      <p class="post-crosslink">Using the Terminal instead? <a href="two-kinds-of-fences-terminal.html">Read the Terminal (CLI) version &rarr;</a></p>
+
+      <div class="post-body">
+<p>In the last post, I described the first thing to do before you run an AI assistant like Claude Code: make one folder for your AI-assisted work, and make sure the folder dropdown box in your desktop app is showing that folder every time. That habit costs nothing, and if it is the only thing you ever do, you have gone a long way toward protecting your privacy and security. But a habit is only as good as your memory of it. It holds as long as you remember to check that dropdown box, and as long as the tool treats that folder as its boundary. If your computer or your cloud folders hold material other people are counting on you to protect — a professor’s graded work, a clinician’s case notes, a researcher’s confidential transcripts — you want a boundary that does not depend on either of those things. You want one the computer itself enforces. It turns out there are two of these boundaries. This post is about what they are and why you need both; the next post is about how to set them up.</p>
+<p>I want to be clear that this post is not for careless people who aren’t bothered by what an AI assistant is doing on their computer. It’s for the conscientious people who happen to hold other people’s confidential information and would never dream of handing it over to an AI. The hazard is not that you might do something reckless. It is that the sensitive files are already on your computer, already reachable by the AI assistant — and there is no announcement of this fact when you are using a tool like Claude Code. The goal here is to understand how to make sure Claude Code cannot reach folders or files to which you have not deliberately given it access.</p>
+<p>The first thing that surprised me, when I set this up with help, is that there is not one way for your computer to enforce a fence, but two. That’s because Claude Code (or any other AI assistant) can act on your computer in two different ways. This means each way needs its own fence.</p>
+<h2>Fence number one: Sandbox for commands</h2>
+<p>The first fence is called a <strong>sandbox.</strong> A sandbox fences in <em>commands</em>: short instructions (“code”) that tell the computer’s own machinery to carry out a specific task. Commands are the computer programmer’s bread and butter, and Claude Code is great at them. Commands are how it does the heavier, more mechanical jobs, the kind you would never do by hand. For example, as part of my research on nonprofit organizations I had a spreadsheet of about 10,000 New York City nonprofits. I asked Claude Code to find the highest-paid employee at each one and tell me how many of them earned at least 10% of their organization’s budget. To do that, it wrote and ran commands. I did not write them, and although I could watch them go by in the app’s window, I could not have told you what any one of them did. What I saw was the answer — roughly 1,400 organizations — and the tidy output spreadsheet that Claude Code created. The actual work, reading through all the underlying data and weighing every salary against every budget, happened out of sight in response to Claude Code’s commands.</p>
+<p>Commands do lots of powerful work, and a sandbox is a <em>cage</em> your computer’s operating system puts around those commands. The sandbox limits two things: where a command is allowed to reach on your computer, and where it is allowed to reach on the internet. When you make a sandbox, you can tell Claude Code where it’s allowed to run commands: for example, only inside your AIWorkspace folder. So when I had Claude Code work on my nonprofit project, I made sure the spreadsheet with the data was in my AIWorkspace folder, where Claude Code could write commands to access and analyze it. When the results were ready, they showed up in that same folder. But if a Claude Code command had tried to reach into my Documents or my Box folder, my computer’s operating system would have automatically refused it. And on the internet side, the sandbox works from a list of allowed addresses: anything not on that list is refused, whether Claude Code is trying to send my data out or to pull something down and run it on my computer. So the sandbox is a cage that holds whether or not you are watching. A command that tries to step outside the cage is stopped.</p>
+<h2>Fence number two: Permission rules for Claude Code’s “hands”</h2>
+<p>But running commands is not the only way Claude Code touches your files. It also has a built-in set of tools for opening a file, reading what’s in it, and writing changes back. In my conversations with Claude Code, it often refers to these built-in tools as its “hands.” When Claude Code puts its “hands” on your files, it means it’s picking up and working with those files directly, not writing commands to (indirectly) work with your files. It is an odd distinction, but the implications for how to fence in Claude Code are significant. It means that not only do you need a sandbox, you also need a second kind of fence. Here’s why.</p>
+<p>By default, Claude Code’s “hands” can reach any file you can reach, anywhere on your computer. The folder you point the app at (e.g., AIWorkspace) is where Claude Code starts and does most of its work, but it is not a wall around what its “hands” can touch. Ask it to “grab the spreadsheet from my Downloads” or “pull up the notes on my Desktop,” and its “hands” can go and get them. More importantly, in the middle of running a longer task you’ve set it to, Claude Code may decide it needs something well outside your AIWorkspace folder and reach for that too. None of this goes through the sandbox: the sandbox watches commands, and reaching for a file directly is a different kind of action that slips past it untouched.</p>
+<p>So the second fence you need is a set of <strong>permission rules:</strong> a plain list of what Claude Code’s “hands” may and may not open. Mine allow my one AIWorkspace folder and deny, by name, the places where sensitive material lives: my Documents, Desktop, and Downloads folders; my cloud-synced Box and Dropbox; my saved keys and passwords; even the stored transcripts of my own past sessions. If Claude Code tries to open any of those, its “hands” are stopped before anything happens.</p>
+<h2>The takeaway</h2>
+<p>If you hold data that other people are counting on you to protect, you want the two fences your computer enforces on your behalf: a <strong>sandbox</strong> for the commands Claude Code runs, and <strong>permission rules</strong> that make clear the files it can and can’t open. Between them, these fences bound what Claude Code can reach — whether or not you are paying attention.</p>
+<p>That leaves the practical question: how to get the fences in place if you are not a technical person, and whether it is something you can do yourself. It is, mostly.</p>
+<p><em>Next: how to set up both fences without writing a line of code — and how to confirm they are really there.</em></p>
+      </div>
+
+      <div class="post-next">
+        <div class="rb-subhead">Next in the series</div>
+        <div class="pn-title">Part 3 &mdash; One Afternoon, Two Fences: How to Set Them Both Up Without Writing Code</div>
+        <div class="pn-meta">Coming soon &middot; desktop app version</div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Nicole P. Marwell</span>
+          <p>Professor, Crown Family School of Social Work, Policy, and Practice, University of Chicago.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="../research.html">Research</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../grants.html">Grants</a>
+          <a href="../teaching.html">Teaching</a>
+          <a href="../media.html">Media</a>
+          <a href="../ai-privacy.html">AI &amp; Privacy</a>
+          <a href="../about.html">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:nmarwell@uchicago.edu">nmarwell@uchicago.edu</a>
+          <a href="https://scholar.google.com/citations?user=d5DbR3IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3950121" target="_blank" rel="noopener">SSRN</a>
+          <a href="https://orcid.org/0000-0001-5748-3179" target="_blank" rel="noopener">ORCID</a>
+          <a href="../cv.pdf">Curriculum Vitae (PDF)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Nicole P. Marwell</span>
+        <span>University of Chicago &middot; Edith Abbott Hall, Chicago, IL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

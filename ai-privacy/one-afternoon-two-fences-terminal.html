@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Afternoon, Two Fences (Terminal) | Nicole P. Marwell</title>
+  <meta name="description" content="Unknown unknown #1, part 3 of 3: how to set up both fences without writing a line of code, and how to confirm they are really there. Terminal (CLI) version." />
+  <link rel="canonical" href="https://nicolemarwell.github.io/ai-privacy/one-afternoon-two-fences-terminal.html" />
+  <meta property="og:title" content="One Afternoon, Two Fences: How to Set Them Both Up Without Writing Code" />
+  <meta property="og:description" content="Unknown unknown #1, concluded — the two fences from the last post do not set themselves up. Here is how to get them in place without writing a line of code, and how to confirm they are really there." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicolemarwell.github.io/ai-privacy/one-afternoon-two-fences-terminal.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html" aria-label="Nicole P. Marwell — home">
+        <span class="brand-mark">NM</span>
+        <span class="brand-name">Nicole&nbsp;P.&nbsp;Marwell</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../research.html">Research</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../teaching.html">Teaching</a>
+        <a href="../media.html">Media</a>
+        <a href="../ai-privacy.html" class="active">AI &amp; Privacy</a>
+        <a href="../about.html">About</a>
+        <a class="btn btn-primary" href="../cv.pdf">CV <span class="arrow">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head"><div class="wrap paper-wrap">
+      <div class="paper-breadcrumb"><a href="../ai-privacy.html">&larr; AI &amp; Privacy series</a></div>
+      <div class="paper-head">
+        <span class="eyebrow">Unknown unknown #1: First, Build a Fence &middot; Part 3 &middot; Terminal (CLI)</span>
+        <h1>One Afternoon, Two Fences: How to Set Them Both Up Without Writing Code</h1>
+      </div>
+    </div></section>
+
+    <section class="section" style="padding-top:0;"><div class="wrap paper-wrap">
+      <p class="post-dek">Unknown unknown #1, concluded &mdash; the two fences from the last post do not set themselves up. Here is how to get them in place without writing a line of code, and how to confirm they are really there.</p>
+      <p class="post-note"><em>A note on scope: like the rest of this series, this post describes a Mac; the ideas apply on Windows too, but the specifics &mdash; where things live, and what the messages say &mdash; differ. If you use the Claude Code desktop app rather than the command line in the Terminal app, there&rsquo;s a desktop app version of this post too.</em></p>
+      <p class="post-crosslink">Using the Claude desktop app instead? <a href="one-afternoon-two-fences-desktop.html">Read the desktop app version &rarr;</a></p>
+
+      <div class="post-body">
+<p>The last post explained the two fences your computer can enforce for you: a sandbox that confines the commands Claude Code runs, and a set of permission rules that confine its own &ldquo;hands&rdquo; &mdash; the built-in tools Claude Code uses to open and change files directly. Knowing you want both is the hard part. Getting them in place is easier than you might think.</p>
+<p>The sandbox and permission rules live in a hidden settings file on your computer, in a folder called <code>~/.claude</code> that, by design, sits outside the folder on your computer that I hope you&rsquo;ve already made for your work with Claude Code (that &ldquo;AI Workspace&rdquo; folder I described how to set up in Part 1 of &ldquo;Unknown Unknown #1&rdquo;). The good news is that the hidden settings file is located in a corner of your computer you would never open by accident. Claude Code cannot change that settings file itself: when I was working on setting these fences up on my own computer, Claude Code actually did try to edit its own permissions. Fortunately, my computer&rsquo;s system refused it, on purpose. That&rsquo;s how you protect yourself: by writing the rules to constrain Claude Code, and then installing them somewhere it can&rsquo;t rewrite.</p>
+<p>Now here comes the part that might feel a little dangerous. Since I&rsquo;m not a coder, I had to ask Claude Code to write that settings file for me. Probably you&rsquo;re going to need to do that too. It means describing, in plain words, what you want fenced. And then Claude Code gives you the computer code you need to install to set those fences up. You have to install that code on your computer yourself, because the whole point is that Claude Code is not allowed to get into the settings file. Here&rsquo;s how to do it, start to finish.</p>
+<ul>
+<li><strong>Ask Claude Code to write the rules.</strong> With Claude Code running inside your AIWorkspace folder, give it a request like the one below. In this example, I&rsquo;ve listed out the specific folders I want to keep Claude Code out of &mdash; Documents, Desktop, Downloads, cloud folders &mdash; as well as some additional files I don&rsquo;t want it to touch. Your list of prohibited places might look different. Copy the below text, but remember to swap in your own folder names for the places you don&rsquo;t want Claude Code to go:
+<blockquote><p>&ldquo;I want to fence you in so you can only work inside my AIWorkspace folder. Please set up both of the enforced fences we need: the sandbox that limits the commands you run, and the permission rules that limit which files you can open. Together they should confine you to my AIWorkspace folder and block your access to my Documents, Desktop, and Downloads; my cloud folders (Box and Dropbox); my saved passwords and keys; and the transcripts of my past sessions. Tell me which file the settings go in, explain in plain language what each part does, and remember that you can&rsquo;t install it yourself. I&rsquo;ll paste it in.&rdquo;</p></blockquote>
+</li>
+<li><strong>Have Claude Code hand you the finished code, along with clear instructions on how to install it on your computer.</strong> Once you&rsquo;ve got the above code produced, ask Claude Code to give you the exact, click-by-click way to put the settings into place on your particular Mac. The details differ from machine to machine, and Claude Code can check yours and get them right &mdash; better than I can specify in a post that cannot see your computer. Yes, there is some trust going on here. If it makes you nervous, maybe you can ask a person who knows how to code to sit with you while you do this. But take it from me: it&rsquo;s pretty straightforward to do.</li>
+<li><strong>Paste the settings in and save.</strong> Follow those steps to open the settings file Claude Code named &mdash; it lives in a hidden folder called <code>~/.claude</code> &mdash; and paste in the exact code that Claude Code wrote. Then save it. If opening a hidden file is unfamiliar, you can ask Claude Code how to do it as part of your request for step-by-step instructions. That&rsquo;s what I did.</li>
+<li><strong>Quit Claude Code and start it again.</strong> The new rules you&rsquo;ve just given Claude Code will only be read once it starts up again. They do not take effect until you restart Claude Code, so don&rsquo;t forget this step.</li>
+<li><strong>Before you point Claude Code at anything sensitive, run a check.</strong> Don&rsquo;t skip this step! It&rsquo;s how you confirm you did your setup correctly. A first-time setup happens before the fence exists, so until you have confirmed the fence is up, treat Claude Code as if it were unfenced and keep it away from any real data. The next section is a one-minute check that confirms the fence holds. Run it, and test the specific places you most want kept out.</li>
+</ul>
+<p>None of the steps above asks you to write a line of code yourself. It does ask you to describe what you want, move a file into place, and check the result. If you would rather not touch even that much, you can hand the whole task to your institution&rsquo;s IT office; a clear request sounds like this: &ldquo;Please set up my AI assistant so that it can reach only one folder, and show me how to check that it&rsquo;s working.&rdquo; Either way, the judgment is the part that stays yours &mdash; deciding what to fence, and confirming afterward that it holds.</p>
+<h2>Check the fence</h2>
+<p>Whatever fences you have, you should be able to check them, and the check takes about a minute. You do not need to understand the commands involved; you only need to read the result. Ask Claude Code, in plain words, to do two things.</p>
+<p>First, ask it to open a folder that should be off-limits. The correct answer is a refusal: &ldquo;Operation not permitted,&rdquo; or &ldquo;denied by your permission settings,&rdquo; or words to that effect. Then ask Claude Code to open your workspace folder. The correct answer is that it simply works.</p>
+<p>I ran exactly this check while finishing this post. I asked Claude Code to open my Documents folder, my hidden login file, and the transcripts of my own past sessions; each time it refused. I asked it to open my AIWorkspace folder; it did. If the forbidden folder is refused and the workspace folder opens, your fence is up. If a folder you meant to keep out is opened for you instead, then whatever you believed about your fence is wrong &mdash; and that is the moment to stop and sort it out, before you do anything sensitive. You can tell Claude Code what happened, and ask it to help you fix it.</p>
+<p>The next part of the check runs in the other direction: ask Claude Code what is permitted, not only what is refused. Claude Code can answer that question about itself. It cannot open the settings file &mdash; those rules are deliberately placed where it cannot reach them &mdash; but it can see the rules in force in the session it is running in, and it will list them if you ask:</p>
+<blockquote><p>Using the permission and sandbox rules in force in this session, list every location outside my AIWorkspace folder that you are allowed to read or write, including anything allowed by an exception, and every address on the internet you are allowed to reach. For each one, tell me what it is for. I want to decide whether I want it there.</p></blockquote>
+<p>It&rsquo;s important to ask about internet addresses as well as folders on your computer. When I first ran this check, my list of approved internet sites had roughly 480 addresses, nearly all of them places from which Claude Code had fetched information while working on a project for me: journal publishers, databases, government websites, preprint servers, etc. Read what comes back as a list of decisions you are being asked to ratify. Anything you did not choose, or cannot see a reason for, is the thing to take out.</p>
+<h2>The takeaway</h2>
+<p>Here&rsquo;s your checklist for putting your fences in place:</p>
+<ul>
+<li>Ask Claude Code to write the settings that fence it to your one folder and deny the sensitive places by name.</li>
+<li>Install them yourself &mdash; paste the file in and restart &mdash; or hand that one step to a colleague or your IT office. It is done once.</li>
+<li>Before you let it near any real data, run the one-minute check: ask it to open a folder it should not reach, and confirm it cannot.</li>
+<li>Ask the other question too: what are you allowed to reach outside this folder &mdash; on my computer and on the internet &mdash; and why? Run that once now, and again whenever the rules change; a refusal test finds only the holes you already guessed.</li>
+</ul>
+<p>The setup shouldn&rsquo;t take too long, maybe an hour or so. If you&rsquo;re feeling nervous about doing it yourself, try an email to your IT office, which should be able to help you (you can share this post with them, too!). And you probably want to re-read your rules occasionally &mdash; a fence you installed once and stopped checking is one you are trusting, not one you know.</p>
+<p><em>Next: before you enter a single file, the prior question &mdash; what you owe the people whose data you hold, once an AI assistant can reach it.</em></p>
+      </div>
+
+      <div class="post-next">
+        <div class="rb-subhead">Next in the series</div>
+        <div class="pn-title">Unknown unknown #2 &mdash; Before You Feed It: What You Owe the People Whose Data You Hold</div>
+        <div class="pn-meta">Coming soon &middot; Terminal (CLI) version</div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Nicole P. Marwell</span>
+          <p>Professor, Crown Family School of Social Work, Policy, and Practice, University of Chicago.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="../research.html">Research</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../grants.html">Grants</a>
+          <a href="../teaching.html">Teaching</a>
+          <a href="../media.html">Media</a>
+          <a href="../ai-privacy.html">AI &amp; Privacy</a>
+          <a href="../about.html">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:nmarwell@uchicago.edu">nmarwell@uchicago.edu</a>
+          <a href="https://scholar.google.com/citations?user=d5DbR3IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3950121" target="_blank" rel="noopener">SSRN</a>
+          <a href="https://orcid.org/0000-0001-5748-3179" target="_blank" rel="noopener">ORCID</a>
+          <a href="../cv.pdf">Curriculum Vitae (PDF)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Nicole P. Marwell</span>
+        <span>University of Chicago &middot; Edith Abbott Hall, Chicago, IL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Custodian, Not Data Owner (Terminal) | Nicole P. Marwell</title>
+  <meta name="description" content="Unknown unknown #2: the fences decide what the tool can reach on its own, but not what you are permitted to put inside them. The governance obligations that predate Claude Code. Terminal (CLI) version." />
+  <link rel="canonical" href="https://nicolemarwell.github.io/ai-privacy/data-custodian-terminal.html" />
+  <meta property="og:title" content="Data Custodian, Not Data Owner" />
+  <meta property="og:description" content="Unknown unknown #2 — the fences decide what your AI assistant can reach on its own, but they don't tell you what you are permitted to put inside them. That's a question about what you owe to other people." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicolemarwell.github.io/ai-privacy/data-custodian-terminal.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html" aria-label="Nicole P. Marwell — home">
+        <span class="brand-mark">NM</span>
+        <span class="brand-name">Nicole&nbsp;P.&nbsp;Marwell</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../research.html">Research</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../teaching.html">Teaching</a>
+        <a href="../media.html">Media</a>
+        <a href="../ai-privacy.html" class="active">AI &amp; Privacy</a>
+        <a href="../about.html">About</a>
+        <a class="btn btn-primary" href="../cv.pdf">CV <span class="arrow">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head"><div class="wrap paper-wrap">
+      <div class="paper-breadcrumb"><a href="../ai-privacy.html">&larr; AI &amp; Privacy series</a></div>
+      <div class="paper-head">
+        <span class="eyebrow">Unknown unknown #2 &middot; Terminal (CLI)</span>
+        <h1>Data Custodian, Not Data Owner</h1>
+      </div>
+    </div></section>
+
+    <section class="section" style="padding-top:0;"><div class="wrap paper-wrap">
+      <p class="post-dek">Unknown unknown #2 &mdash; the fences decide what your AI assistant can reach on its own, but they don&rsquo;t tell you what you are permitted to put inside them. That&rsquo;s a question about what you owe to other people, and you need to consider it carefully.</p>
+      <p class="post-crosslink">Using the Claude desktop app instead? <a href="data-custodian-desktop.html">Read the desktop app version &rarr;</a></p>
+
+      <div class="post-body">
+<p>The last post was about getting the fences in place &mdash; a sandbox for the commands Claude Code runs, and permission rules for the files it can open directly. Together they settle what the tool can <em>get to</em> on its own. But the fences leave untouched a prior question, the one no setting can answer for you: of the things you <em>could</em> place in front of Claude Code, which are actually yours to hand over?</p>
+<p>For anyone who holds other people&rsquo;s data &mdash; and most of us in universities, clinics, agencies, and firms do &mdash; this is a governance question. As a university-based researcher and teacher, much of the material on my computer is not, in the sense that matters here, mine. It was entrusted to me: by students, by research participants, by the people whose lives my work is about. What I owe them does not disappear just because an AI assistant has made it frictionless to share their information.</p>
+<p>This obligation binds everyone who touches an AI assistant. The colleague who only ever opens Claude in a browser still has the same duty to the people whose data they hold in their files. And what you owe doesn&rsquo;t change depending on which tool you use, be it Claude, ChatGPT, Gemini, or any other AI assistant.</p>
+<h2>Consent was given to you, not to the machine</h2>
+<p>The data you hold about other people came to you under terms. Your students&rsquo; records, your subjects&rsquo; interviews, your patients&rsquo; histories, your clients&rsquo; files &mdash; the people they describe agreed to <em>your</em> handling of them, for <em>your</em> stated purposes, within a relationship they understood. They did not agree to a third-party artificial-intelligence company receiving that same material and processing it on its own servers. That was not on the table when they consented.</p>
+<p>Entering their data into Claude Code is therefore not a neutral act of using a tool. It is a new disclosure &mdash; a handing-over to an entity your students and subjects never met and never authorized. When you open a file using Claude Code, it feels identical to opening the file yourself: that&rsquo;s the friction being smoothed away. You&rsquo;ve just given Claude Code&rsquo;s parent company access to that data. Whether or not the data is later used to train a model (a matter for a later post), the disclosure itself has already happened the moment the file is accessed by Claude Code.</p>
+<h2>Your obligations are specific, and they predate your use of Claude Code</h2>
+<p>Using Claude Code to give feedback on student papers means a student&rsquo;s name, ideas, and perhaps struggles are exposed to a company that was never party to any agreement with that student. Asking Claude Code to help draft a recommendation letter means someone&rsquo;s career trajectory and your private assessment of their limitations go in, too. An interview transcript where a participant told you something sensitive was shared with you, not with an AI company&rsquo;s servers. The common thread is that another person trusted you with their information for a specific purpose, and that purpose did not include this.</p>
+<p>There are a number of cases where there are significant legal boundaries: <strong>FERPA</strong> covers student records, <strong>HIPAA</strong> requires a formal Business Associate Agreement before a vendor may handle patient information at all, <strong>IRB protocols</strong> govern research-participant data, and confidentiality obligations attach to client files, NDAs, and your institution&rsquo;s own policies. The details differ by institution and jurisdiction, and I am not offering legal advice. But you are expected to know which of these rules apply <em>before</em> the relevant data goes near an AI assistant.</p>
+<h2>A rule you can use before you paste: classify first</h2>
+<p>A good place to start setting yourself some discipline on this issue is to sort your data <em>before</em> it goes near Claude Code, not after. A simple three-color rule does most of the work:</p>
+<ul>
+<li><strong>Green &mdash; yours, and safe to share.</strong> Your own drafts, your analysis, public documents, already-published material. These can go into Claude Code freely.</li>
+<li><strong>Yellow &mdash; sensitive, but yours.</strong> Unpublished work, internal documents, anything you would not want public but that you are entitled to decide about. Yellow calls for a brief check before you proceed: Are you using a Claude Code account with appropriate data-retention settings? Do the terms of that account cover this kind of content? And do you actually need to share this, or can you work around it?</li>
+<li><strong>Red &mdash; other people&rsquo;s protected data.</strong> Identifiable student, subject, patient, or client information; anything under a confidentiality obligation. This does not go in without explicit authorization and, often, a formal institutional agreement.</li>
+</ul>
+<p>One caution on the yellow category: replacing names with code numbers does not make data yellow. Swapping identifiers for codes is <em>pseudonymization</em>, not de-identification &mdash; the original identities are still recoverable from the key you hold. A research transcript where &ldquo;Sarah Chen&rdquo; has become &ldquo;Participant 7&rdquo; is not de-identified; it is still red if the underlying consent and protocol do not cover processing the data with Claude Code. The question is not whether you have swapped the names for a numeric code, but whether the people in the data authorized you for this particular use. That is a harder question than it looks, and for most research data the answer is &ldquo;no&rdquo; until formal steps are taken.</p>
+<p>So: <em>classify your data before it touches Claude Code.</em> The color you assign decides what happens next, and the assignment is a judgment only you can make.</p>
+<h2>When the answer is red</h2>
+<p>A red classification is not the end of the road; it&rsquo;s a redirection. The right next step is asking whether your institution has a <em>vetted, contracted</em> path &mdash; an approved tool, a signed data-processing agreement, or an amendment to your IRB protocol. Be prepared for the honest answer that no such path yet exists: most institutions have sorted this out for large platforms but not for specialized research software, and IRBs were designed to protect participants from researchers, not from researchers&rsquo; software stacks. Asking is still the right move &mdash; it surfaces the gap, and that email is both your minimum due diligence and how institutions begin to build the capacity to answer.</p>
+<h2>The takeaway</h2>
+<p>The lines for the checklist beside your keyboard:</p>
+<blockquote>
+<p><strong>Before any file goes near Claude Code, classify it &mdash; green, yellow, or red &mdash; and ask two questions of anything that isn&rsquo;t plainly yours:</strong> 1. <em>Is this mine to share with a third party?</em> 2. <em>Did the people this data is about agree to</em> this?</p>
+<p>If the honest answer to either is &ldquo;no&rdquo; or &ldquo;I&rsquo;m not sure,&rdquo; don&rsquo;t let Claude Code touch it until you have asked someone whose job it is to know.</p>
+</blockquote>
+<p><strong>The cost of this one.</strong> Unlike the fence, there&rsquo;s no clear setup for governance: it&rsquo;s a habit of judgment, exercised before the data moves rather than after. For genuinely protected data, the task is one email to your IRB, compliance office, or institutional counsel, asking whether an approved path exists. What the answer reveals &mdash; that a vetted path exists, that one is being built, or that no one has asked yet &mdash; is exactly the information that can help protect both you and the people in your files.</p>
+<p><em>Next: what actually leaves your computer when Claude Code reads a file &mdash; because even data you are fully entitled to use still travels somewhere, and where it goes is the next thing worth knowing.</em></p>
+      </div>
+
+      <div class="post-next">
+        <div class="rb-subhead">Next in the series</div>
+        <div class="pn-title">Unknown unknown #3 &mdash; Exposure: What Actually Leaves Your Computer When Claude Code Reads a File</div>
+        <div class="pn-meta">Coming soon &middot; Terminal (CLI) version</div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Nicole P. Marwell</span>
+          <p>Professor, Crown Family School of Social Work, Policy, and Practice, University of Chicago.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="../research.html">Research</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../grants.html">Grants</a>
+          <a href="../teaching.html">Teaching</a>
+          <a href="../media.html">Media</a>
+          <a href="../ai-privacy.html">AI &amp; Privacy</a>
+          <a href="../about.html">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:nmarwell@uchicago.edu">nmarwell@uchicago.edu</a>
+          <a href="https://scholar.google.com/citations?user=d5DbR3IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3950121" target="_blank" rel="noopener">SSRN</a>
+          <a href="https://orcid.org/0000-0001-5748-3179" target="_blank" rel="noopener">ORCID</a>
+          <a href="../cv.pdf">Curriculum Vitae (PDF)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Nicole P. Marwell</span>
+        <span>University of Chicago &middot; Edith Abbott Hall, Chicago, IL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
